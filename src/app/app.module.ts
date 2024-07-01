@@ -6,19 +6,52 @@ import { AppComponent } from './app.component';
 import { AudioPlayerComponent } from './audio-player/audio-player.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
+import { HeaderComponent } from './header/header.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import {MatCardModule} from '@angular/material/card';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { StationsComponent } from './stations/stations.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { FooterComponent } from './footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { StationsCardComponent } from './stations-card/stations-card.component';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AudioPlayerComponent
+    AudioPlayerComponent,
+    HeaderComponent,
+    SidebarComponent,
+    StationsComponent,
+    FooterComponent,
+    StationsCardComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule,
+    FontAwesomeModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatListModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule,
+    MatGridListModule
+   
+    
+    
     
   ],
   providers: [

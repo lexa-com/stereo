@@ -1,0 +1,61 @@
+.stations_home-sidebar {
+  background-color: rgba(245, 239, 239, 0.936);
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, .24) 0px 8px 3px;
+}
+
+.stations_home-list {
+  background-color: rgba(245, 239, 239, 0.936);
+  height: 100vh;
+  overflow-y: auto;
+  padding-left: 0px;
+}
+
+.stations_home-sidebar-item {
+  font-size: 16px;
+  color: black;
+  width: 100%;
+  margin: 10px;
+  padding-left: 18px;
+}
+
+.stations_home-sidebar-item > a {
+  color: rgb(14, 12, 12);
+}
+
+.stations_home-sidebar-item > a:hover {
+  cursor: pointer;
+  color: gray;
+}
+
+.playlist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 6px; /* Adjust the gap as needed */
+  max-height: calc(100vh - 150px); /* Adjust the height as needed */
+  overflow-y: auto;
+  padding: 16px; /* Optional padding inside the scrollable area */
+}
+
+.player{
+  display: flex;
+  background-color: aliceblue;
+  flex-direction: row;
+  height: 60px;
+  justify-content:flex-start;
+  padding: 10px;
+  border-radius: 12px;
+  
+  
+}
+
+h4{
+  margin-right: 50px;
+}
+.player_controls{
+  margin-right: 50px;
+}

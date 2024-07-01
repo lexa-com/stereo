@@ -1,0 +1,12 @@
+.stations_card {
+    height: 140px;
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255,255,255); /* 40% opacity */
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 6px;
+}

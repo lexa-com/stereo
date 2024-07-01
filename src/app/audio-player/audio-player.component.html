@@ -1,12 +1,10 @@
+<div class="player_container container-fluid">
+  <div class="player_card">
+    <img [src]="selectedoption" alt="cover_img">
+    <audio #audio autoplay [src]="streamUrl"></audio>
+    <img [src]="isPlaying ? pause : play" (click)="togglePlayPause()">
+    
 
-
-<audio controls autoplay>
-    <source *ngIf="streamUrl" [src]="streamUrl">
-    Your browser does not support the audio element.
-  </audio>
-
-  <div class="grid-item" >
-    <img [src]="selectedoption" alt="item.name"  />
   </div>
 
-  
+</div>

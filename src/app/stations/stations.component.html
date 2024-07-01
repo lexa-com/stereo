@@ -1,0 +1,48 @@
+<div class="stations_home row">
+  <div class="stations_home-sidebar col-2">
+    <div class="stations_home-sidebar-item">
+      <img src="assets/logo.jpg" alt="logoo"
+      width="180"
+      class="m-3 text-left"></div>
+    <div class="stations_home-sidebar-item">
+      <a href="">Home</a>
+    </div>
+    <div class="stations_home-sidebar-item">
+      <a href="">Favourites</a>
+    </div>
+    <div class="stations_home-sidebar-item">
+      <a href="">Recently Played</a>
+    </div>
+
+    <div class="stations_home-sidebar-item">
+      <fa-icon [icon]="telegram"></fa-icon>
+    </div>
+    <div class="stations_home-sidebar-item">
+      
+    </div>
+    
+  </div>
+  <div class="stations_home-list col-10">
+    <app-header></app-header>
+
+    <div [style.paddingTop]="'50px'" class="mt-5 container-fluid"> 
+      <div class="playlist">
+        <div *ngFor="let item of stations" (click)="playRadio(item)">
+          <app-stations-card
+          [coverImage]="item.coverurl"
+          ></app-stations-card>
+        </div>
+      </div>
+      
+    </div>
+    <div class="player">
+      <h4>Now Playing ...</h4>
+      <img [src]="cover" alt="assets/logo.jpg" class="player_controls">
+      <audio #audio autoplay [src]="radio"></audio>
+      <img [src]="isPlaying ? pause : play" (click)="togglePlayPause()" class="player_controls">
+    </div>
+  </div>
+  
+</div>
+  
+  
