@@ -1,14 +1,18 @@
 <div class="stations_home row">
   <div class="stations_home-sidebar col-2">
     <div class="stations_home-sidebar-item">
-      <img src="assets/logo.jpg" alt="logoo"
-      width="180"
-      class="m-3 text-left"></div>
+      <img src="assets/logg.jpg" alt="logoo"
+      width="120"
+      class="m-3 text-left">
+    </div> 
     <div class="stations_home-sidebar-item">
-      <fa-icon [icon]="home" (click)="getStations()">Home</fa-icon>
+      <span>Dutch FM/AM Radio</span>
     </div>
     <div class="stations_home-sidebar-item">
-      <fa-icon [icon]="favourites" (click)="getFavourites()"></fa-icon>
+      <span (click)="getStations()"><fa-icon [icon]="home" ></fa-icon>Home</span>
+    </div>
+    <div class="stations_home-sidebar-item">
+      <span (click)="getFavourites()"><fa-icon [icon]="favourites" ></fa-icon>Favourites</span>
     </div>
     <div class="stations_home-sidebar-item">
      
@@ -23,9 +27,22 @@
     
   </div>
   <div class="stations_home-list col-10">
-    <app-header></app-header>
-
-    <div [style.paddingTop]="'50px'" class="mt-5 container-fluid"> 
+    <!-- <app-header></app-header> -->
+    <div class="bar">
+      <div class="search" >
+        <input type="text" [(ngModel)]="inputValue" >
+       
+        <button class="btn-secondary" (click)="searchStations()">Search</button>
+      </div>
+       <div class="player">
+      <h4>Now Playing ...</h4>
+      <img [src]="cover" alt="favicon" class="player_controls">
+      <audio #audio autoplay [src]="radio"></audio>
+      <img [src]="isPlaying ? pause : play" (click)="togglePlayPause()" class="player_controls">
+    </div>
+  </div>
+    
+    <div class="mt-5"> 
       <div class="playlist">
         <div *ngFor="let item of stations" (click)="playRadio(item)">
           <app-stations-card
@@ -35,12 +52,7 @@
       </div>
       
     </div>
-    <div class="player">
-      <h4>Now Playing ...</h4>
-      <img [src]="cover" alt="assets/logo.jpg" class="player_controls">
-      <audio #audio autoplay [src]="radio"></audio>
-      <img [src]="isPlaying ? pause : play" (click)="togglePlayPause()" class="player_controls">
-    </div>
+    
   </div>
   
 </div>

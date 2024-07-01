@@ -2,3 +2,24 @@
 *{
   overflow: hidden;
 }
+.green-snackbar {
+  background: rgb(65, 252, 134);
+  color: black;
+}
+
+.green-snackbar button {
+  background-color: rgb(65, 252, 134);
+  color: white;
+  border: none;
+}
+
+.red-snackbar {
+  background: white;
+  color: red;
+}
+
+.red-snackbar button {
+  background-color: #ff766d;
+  color: white;
+  border: none;
+}

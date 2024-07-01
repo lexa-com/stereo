@@ -3,6 +3,8 @@ import { AudioService } from '../audio.service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { faCoffee,faMessage,faHeart,faHome } from '@fortawesome/free-solid-svg-icons';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { NotificationService } from '../service/notification.service';
 
 @Component({
   selector: 'app-stations',
@@ -23,10 +25,13 @@ export class StationsComponent implements OnInit {
   isPlaying: boolean = false;
   @ViewChild('audio') audio: any;
   stationss: any;
-  radiosArray:any[]=[]
+  radiosArray:any[]=[];
+  inputValue: string = '';
 
   constructor(private stationsAPI: AudioService,
-    private router:Router
+    private router:Router,
+    private fb:FormBuilder,
+    private notificationAPI:NotificationService
   ) {}
 
   ngOnInit(): void {    
@@ -46,10 +51,13 @@ export class StationsComponent implements OnInit {
     console.log(idsArray)
     
     if (idsArray.includes(radio._id)){
-      console.log("already exists")
+      this.notificationAPI.alertWarning(`${radio.name} Exists in your Favourites`)
+      console.log(`${radio.name} Exists in your Favourites`);
       
     }
-    else{favourites.push(radio);}
+    else{favourites.push(radio);
+      this.notificationAPI.alertSuccess(`${radio.name} Added to your Favourites`);
+    }
 
     
     
@@ -80,6 +88,15 @@ export class StationsComponent implements OnInit {
     if (storedStations) {
       this.stations = JSON.parse(storedStations);
     }
+  }
+
+  searchStations() {
+    this.stationsAPI.getAudioStreamUrl().subscribe(res => {
+      // Filter stations based on the search term
+      this.stations = res.filter((station: { name: string; }) => 
+        station.name.toLowerCase().includes(this.inputValue.toLowerCase())
+      );
+    });
   }
 
 

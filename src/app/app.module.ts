@@ -20,6 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { StationsCardComponent } from './stations-card/stations-card.component';
+import { FormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -48,7 +50,9 @@ import { StationsCardComponent } from './stations-card/stations-card.component';
     MatListModule,
     BrowserAnimationsModule,
     MatPaginatorModule,
-    MatGridListModule
+    MatGridListModule,
+    FormsModule,
+    MatSnackBarModule
    
     
     

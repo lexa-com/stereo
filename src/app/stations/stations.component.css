@@ -46,9 +46,11 @@
   background-color: aliceblue;
   flex-direction: row;
   height: 60px;
-  justify-content:flex-start;
+  justify-content:flex-end;
+  width: fit-content;
   padding: 10px;
   border-radius: 12px;
+  font-family: cursive;
   
   
 }
@@ -61,4 +63,22 @@ h4{
 }
 fa-icon{
   font-size: x-large;
+}
+.bar{
+  padding-top: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bar > .player{
+  align-self: flex-end;
+  
+}
+.btn-secondary{
+  margin-left: 12px;
+}
+span{
+  cursor: pointer;
+  font-family: cursive;
 }
