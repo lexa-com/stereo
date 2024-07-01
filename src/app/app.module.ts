@@ -22,6 +22,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { StationsCardComponent } from './stations-card/stations-card.component';
 import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AdsComponent } from './ads/ads.component';
 
 
 
@@ -34,7 +35,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     SidebarComponent,
     StationsComponent,
     FooterComponent,
-    StationsCardComponent
+    StationsCardComponent,
+    AdsComponent
     
   ],
   imports: [
