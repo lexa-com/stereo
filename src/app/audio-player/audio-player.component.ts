@@ -53,7 +53,6 @@ export class AudioPlayerComponent implements AfterViewInit {
     this.clicks = this.station.count
     console.log(`Stream URL: ${this.streamUrl,this.selectedoption}`);
     this.cdr.detectChanges();
-    this.getStations()
     this.togglePlayPause()
     
   }
@@ -74,11 +73,5 @@ export class AudioPlayerComponent implements AfterViewInit {
     })
   }
 
-  getStations(){
-    {
-      this.stationsAPI.getAudioStreamUrl().subscribe(res => {
-        this.stations = res;
-      });
-    }
-  }
+  
 }
